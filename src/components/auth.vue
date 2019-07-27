@@ -6,7 +6,10 @@
 
 <script>
     export default {
-        name: "auth"
+        name: "auth",
+        mounted() {
+          console.log('ddfdsfsdfds', ' PENIS');
+        },
     }
 </script>
 
