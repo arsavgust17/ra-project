@@ -21,7 +21,8 @@
 <style scoped>
     .main
     {
-        background-image: url("../../public/images/auth.png");
+        background:url("../../public/images/auth.png") 100% 100% no-repeat;
+        background-size: cover;
         position: fixed;
         top: 0;
         left: 0;
