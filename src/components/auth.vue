@@ -50,7 +50,7 @@
     margin-left: 30px;
     margin-right: 30px;
     font-family: Roboto;
-    font-style: normal;
+    font-style: medium;
     font-weight: 500;
     font-size: 36px;
     line-height: 42px;
