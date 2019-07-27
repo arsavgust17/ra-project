@@ -38,7 +38,6 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "qr" */ "@/components/scanQR.vue")
-          import(/* webpackChunkName: "auth" */ "@/components/auth.vue")
     },
     {
       path: "/start",
@@ -56,7 +55,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-          import(/* webpackChunkName: "auth" */ "@/components/photoload.vue")
+          import(/* webpackChunkName: "photoload" */ "@/components/photoload.vue")
     }
   ]
 });
