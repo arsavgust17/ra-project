@@ -2,14 +2,14 @@
 Loader(v-if='isLoadingData')
 .content(v-else)
   .header
-    h1.title Рейтинг участников
+    h1.title Рейтинг поликлиник
     Search(@input="searchEnter")
   UsersList
 
 </template>
 
 <script>
-import UsersList from '@/components/rating/users-list.vue';
+import UsersList from '@/components/rating/orgs-list.vue';
 import Search from '@/components/rating/search-component.vue';
 import Loader from '@/components/rating/loader.vue';
 
@@ -23,80 +23,45 @@ export default {
   data() {
     return {
       searchData: {},
-      users: [
-        {
-          id: 1,
-          name: 'Денис',
-          secondName: 'Топорков',
-          age: 30,
-          rating: 115,
-          position: 'Inventore',
-        },
-        {
-          id: 2,
-          name: 'Лукьян',
-          secondName: 'Рагозин',
-          age: 22,
-          rating: 22,
-          position: 'Служащий',
-        },
-        {
-          id: 3,
-          name: 'Ярослав',
-          secondName: 'Рыжов',
-          age: 45,
-          rating: 10,
-          position: 'Служащий',
-        },
-        {
-          id: 4,
-          name: 'Денис',
-          secondName: 'Топорков',
-          age: 55,
-          rating: 102,
-          position: 'Специалист',
-        },
-        {
-          id: 5,
-          name: 'Артем',
-          secondName: 'Кашников',
-          age: 22,
-          rating: 97,
-          position: 'Boss',
-        },
-        {
-          id: 6,
-          name: 'Лада',
-          secondName: 'Боярская',
-          age: 25,
-          rating: 15,
-          position: 'Рядовой',
-        },
-        {
-          id: 7,
-          name: 'Иосиф',
-          secondName: 'Южанин',
-          age: 41,
-          rating: 1,
-          position: '',
-        },
-        {
-          id: 8,
-          name: 'Станислав',
-          secondName: 'Качаев',
-          age: 34,
-          rating: 0,
-          position: 'Господин Никто',
-        },
-        {
-          id: 9,
-          name: 'Эдуард',
-          secondName: 'Бузинский',
-          age: 32,
-          rating: 200,
-          position: 'Уволен',
-        },
-      ],
+      docs: {
+          "docs": [
+              {
+                  "id": 1,
+                  "name": "ГБОУ Номер 1",
+                  "markone": 2,
+                  "marktwo": 4,
+                  "markthree": 1
+              },
+              {
+                  "id": 2,
+                  "name": "ГБОУ Номер 2",
+                  "markone": 5,
+                  "marktwo": 3,
+                  "markthree": 2
+              },
+              {
+                  "id": 3,
+                  "name": "ГБОУ Номер 3",
+                  "markone": 4,
+                  "marktwo": 4,
+                  "markthree": 4
+              },
+              {
+                  "id": 4,
+                  "name": "ГБОУ Номер 4",
+                  "markone": 5,
+                  "marktwo": 4,
+                  "markthree": 5
+              },
+              {
+                  "id": 5,
+                  "name": "ГБОУ Номер 1",
+                  "markone": 3,
+                  "marktwo": 1,
+                  "markthree": 4
+              }
+          ]
+      },
       isLoading: true,
     };
   },
@@ -108,23 +73,23 @@ export default {
   methods: {
     searchEnter(searchData) {
       if (searchData.searchString) {
-        this.setUsers(searchData.users);
+        this.setUsers(searchData.docs);
       } else {
-        this.setUsers(this.users);
+        this.setUsers(this.docs);
       }
     },
-    setUsers(users) {
-      this.$store.commit('Rating/setUsers', users);
+    setUsers(docs) {
+      this.$store.commit('Rating/setDocs', docs);
     },
   },
   mounted() {
     // иммитация задержки обращения к серверу
     setTimeout(() => {
       this.isLoading = false;
-      this.users.sort((a, b) => b.rating - a.rating);
-      this.setUsers(this.users.map((user, index) => {
-        user.order = index + 1;
-        return user;
+      this.docs.docs.sort((a, b) => b.rating - a.rating);
+      this.setUsers(this.docs.docs.map((doc, index) => {
+        doc.order = index + 1;
+        return doc;
       }));
     }, 3000);
   },

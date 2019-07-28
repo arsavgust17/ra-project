@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div>
-                <Button class="submitButton">Оставить отзыв</Button>
+                <Button class="submitButton" @click="$router.push('/rate-docs')">Оставить отзыв</Button>
             </div>
         </div>
         <div class="feed-back">

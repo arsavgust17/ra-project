@@ -2,7 +2,7 @@
 Loader(v-if='isLoadingData')
 .content(v-else)
   .header
-    h1.title Рейтинг участников
+    h1.title Рейтинг врачей поликлиники
     Search(@input="searchEnter")
   UsersList
 
@@ -30,7 +30,7 @@ export default {
           secondName: 'Топорков',
           age: 30,
           rating: 115,
-          position: 'Inventore',
+          position: 'Врач',
         },
         {
           id: 2,
@@ -38,7 +38,7 @@ export default {
           secondName: 'Рагозин',
           age: 22,
           rating: 22,
-          position: 'Служащий',
+          position: 'Хирург',
         },
         {
           id: 3,
@@ -46,7 +46,7 @@ export default {
           secondName: 'Рыжов',
           age: 45,
           rating: 10,
-          position: 'Служащий',
+          position: 'Ортопед',
         },
         {
           id: 4,
@@ -62,7 +62,7 @@ export default {
           secondName: 'Кашников',
           age: 22,
           rating: 97,
-          position: 'Boss',
+          position: 'Врач',
         },
         {
           id: 6,
@@ -70,7 +70,7 @@ export default {
           secondName: 'Боярская',
           age: 25,
           rating: 15,
-          position: 'Рядовой',
+          position: 'Врач',
         },
         {
           id: 7,
@@ -78,7 +78,7 @@ export default {
           secondName: 'Южанин',
           age: 41,
           rating: 1,
-          position: '',
+          position: 'Врач',
         },
         {
           id: 8,
@@ -86,7 +86,7 @@ export default {
           secondName: 'Качаев',
           age: 34,
           rating: 0,
-          position: 'Господин Никто',
+          position: 'Врач',
         },
         {
           id: 9,

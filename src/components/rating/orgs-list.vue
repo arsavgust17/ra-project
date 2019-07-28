@@ -20,7 +20,7 @@ export default {
     props: {},
     computed: {
         docs() {
-          return this.$utils.clone(this.$store.getters['Rating/getUsers']);
+          return this.$utils.clone(this.$store.getters['Rating/getDocs']);
         },
     },
     methods: {
