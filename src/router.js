@@ -50,6 +50,13 @@ export default new Router({
       name: "quiz",
       component: () =>
           import(/* webpackChunkName: "quiz" */ "@/components/quiz.vue")
+    },
+    {
+      path: "/table",
+      name: "table",
+      component: () =>
+          import(/* webpackChunkName: "quiz" */ "@/components/table.vue")
     }
+
   ]
 });
