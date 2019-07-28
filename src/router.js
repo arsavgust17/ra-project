@@ -9,22 +9,17 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "Home",
       component: () => import(/* webpackChunkName: "qr" */ "@/components/scanQR.vue"),
-      children: [
-        {
-          path: "/quiz",
-          name: "quiz",
-          component: () =>
-              import(/* webpackChunkName: "quiz" */ "@/components/quiz.vue")
-        },
-      ]
+    },
+    {
+      path: "/quiz",
+      component: () =>
+          import(/* webpackChunkName: "quiz" */ "@/components/quiz.vue")
     },
     {
       path: "/statistics",
-      name: "scaning",
       component: () =>
-          import(/* webpackChunkName: "scanning" */ "@/components/scaning.vue")
+          import(/* webpackChunkName: "statistic" */ "@/components/statistics.vue")
     }
   ]
 });
