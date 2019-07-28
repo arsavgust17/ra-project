@@ -1,5 +1,5 @@
 <template>
-    <div :class="!isMobile ? 'main':'mainmob'">
+    <div :class="isMobile ? 'main':'mainmob'">
         <Upload class="upload-container"
                 :on-success="(response, file, fileList)=>this.$router.push('auth') "
                 action="//jsonplaceholder.typicode.com/posts/">
@@ -8,16 +8,30 @@
                 <p>Загрузите фото прямо сейчас</p>
             </div>
         </Upload>
+
     </div>
 </template>
 
 <script>
-    function isMobile() {
-        try{ document.createEvent("TouchEvent"); return true; }
-        catch(e){ return false; }
-    }
-    export default {
-        name: "photoload"
+    export default
+    {
+        name: "photoload",
+        methods:{
+            isMobile() {
+                try {
+                    document.createEvent("TouchEvent");
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }
+        },
+        mounted() {
+            $( ".selector" ).slider({
+                animate: "fast"
+            });
+        }
+
     }
 </script>
 
