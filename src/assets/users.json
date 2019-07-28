@@ -2,66 +2,75 @@
   "users": [
     {
       "id": 1,
-      "name": "Денис",
-      "secondName": "Топорков",
-      "age": 30,
-      "rating": 115
+      "fio": "Денис Топорков Иванов",
+      "profession": "Терапевт",
+      "markone": 4,
+      "marktwo": 3,
+      "markthree": 4
     },
     {
       "id": 2,
-      "name": "Лукьян",
-      "secondName": "Рагозин",
-      "age": 22,
-      "rating": 22
+      "fio": "Алексей Тиранин Васильевич",
+      "profession": "Невролог",
+      "markone": 1,
+      "marktwo": 2,
+      "markthree": 1
     },
     {
       "id": 3,
-      "name": "Ярослав",
-      "secondName": "Рыжов",
-      "age": 45,
-      "rating": 10
+      "fio": "Вениамин Волин Сергеевич",
+      "profession": "Хирург",
+      "markone": 5,
+      "marktwo": 3,
+      "markthree": 1
     },
     {
       "id": 4,
-      "name": "Денис",
-      "secondName": "Топорков",
-      "age": 55,
-      "rating": 102
+      "fio": "Платон Государев Максимович",
+      "profession": "Психолог",
+      "markone": 3,
+      "marktwo": 5,
+      "markthree": 2
     },
     {
       "id": 5,
-      "name": "Артем",
-      "secondName": "Кашников",
-      "age": 22,
-      "rating": 97
+      "fio": "Анна Гиль Алексеевна",
+      "profession": "Окулист",
+      "markone": 3,
+      "marktwo": 5,
+      "markthree": 5
     },
     {
       "id": 6,
-      "name": "Лада",
-      "secondName": "Боярская",
-      "age": 25,
-      "rating": 15
+      "fio": "Екатерина Бондаренко Александровна",
+      "profession": "Дерматовенеролог",
+      "markone": 5,
+      "marktwo": 5,
+      "markthree": 5
     },
     {
       "id": 7,
-      "name": "Иосиф",
-      "secondName": "Южанин",
-      "age": 41,
-      "rating": 0
+      "fio": "Алиса Топоркова Ивановова",
+      "profession": "Мамолог",
+      "markone": 4,
+      "marktwo": 4,
+      "markthree": 4
     },
     {
       "id": 8,
-      "name": "Станислав",
-      "secondName": "Качаев",
-      "age": 34,
-      "rating": 0
+      "fio": "Дарья Иннуендовна Георгиевна",
+      "profession": "Гинеколог",
+      "markone": 4,
+      "marktwo": 4,
+      "markthree": 4
     },
     {
       "id": 9,
-      "name": "Эдуард",
-      "secondName": "Бузинский",
-      "age": 32,
-      "rating": 200
+      "fio": "Александр Гельевич Дугин",
+      "profession": "Психиатр",
+      "markone": 4,
+      "marktwo": 4,
+      "markthree": 4
     }
   ]
 }
