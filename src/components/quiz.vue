@@ -11,7 +11,7 @@
                         <span class="number-val">1</span>
                     </div>
                     <div :style="colorclass1">
-                        <span>{{this.text1}}</span>
+                        <span class="span-text">{{this.text1}}</span>
                     </div>
                 </div>
                 <div class="question-block">
@@ -25,7 +25,7 @@
                         <span class="number-val">2</span>
                     </div>
                     <div :style="colorclass2">
-                        <span>{{this.text2}}</span>
+                        <span class="span-text">{{this.text2}}</span>
                     </div>
                 </div>
                 <div class="question-block">
@@ -39,7 +39,7 @@
                         <span class="number-val">3</span>
                     </div>
                     <div :style="colorclass3">
-                        <span>{{this.text3}}</span>
+                        <span class="span-text">{{this.text3}}</span>
                     </div>
                 </div>
                 <div class="question-block">
@@ -421,9 +421,9 @@ export default {
             first: 3,
             second: 3,
             third: 3,
-            text1: '',
-            text2: '',
-            text3: '',
+            text1: 'Оцените работу',
+            text2: 'Оцените работу',
+            text3: 'Оцените работу',
         };
     },
     computed: {
@@ -541,7 +541,7 @@ export default {
         border: 2px solid black;
         font-size: 36px !important;
         font-weight: bold;
-        padding: 10px 35px;
+        padding: 20px 40px;
         border-radius: 50%;
         margin-right: 25px;
     }
@@ -662,5 +662,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+.span-text
+{
+    margin-right: 25px;
 }
 </style>
