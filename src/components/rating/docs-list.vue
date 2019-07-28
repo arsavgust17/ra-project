@@ -25,7 +25,7 @@ export default {
     },
     methods: {
       goToLInk() {
-          window.location = '/docs-list'
+          window.location = '/docs-list';
       }
     },
 };

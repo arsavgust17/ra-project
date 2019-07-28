@@ -22,9 +22,14 @@ export default new Router({
           import(/* webpackChunkName: "statistic" */ "@/components/statistics.vue")
     },
     {
-      path: "/rating",
+      path: "/rate-docs",
       name: "rating",
       component: () => import(/* webpackChunkName: "rating" */ '@/components/rating/rating.vue'),
+    },
+    {
+      path: "/rate-orgs",
+      name: "rating",
+      component: () => import(/* webpackChunkName: "rating" */ '@/components/rating/rating-orgs.vue'),
     },
   ]
 });

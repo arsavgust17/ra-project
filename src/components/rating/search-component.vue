@@ -1,5 +1,5 @@
 <template lang="pug">
-Input(search placeholder="Введите Имя / Фамилию" v-model="searchString")
+Input(search placeholder="Введите Имя / Фамилию врача" v-model="searchString")
 </template>
 
 <script>

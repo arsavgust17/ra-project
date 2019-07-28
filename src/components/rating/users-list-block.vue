@@ -108,7 +108,7 @@ export default {
   justify-content center
   align-items center
   font-size 2em
-  color var(--portal-white)
+  color #FFF
   background-color #638ED0
 
 .user
@@ -148,7 +148,7 @@ export default {
   font-size 1.3em
 
 .small-text
-  color var(--portal-gray)
+  color #A2A2A2
   font-weight normal !important
 
 .number
