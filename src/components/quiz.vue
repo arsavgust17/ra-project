@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="question-block">
-                    <span>Понравилось ли качество выполненных услуг</span>
+                    <span style="margin-right: 10px;">Понравилось ли качество оказанных услуг</span>
                     <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType" v-model="first"></slider>
                 </div>
             </div>
@@ -24,12 +24,12 @@
                     <div class="number">
                         <span class="number-val">2</span>
                     </div>
-                    <div :class="colorclass2">
+                    <div :style="colorclass2">
                         <span>{{this.text2}}</span>
                     </div>
                 </div>
                 <div class="question-block">
-                    <span>Понравилось ли качество выполненных услуг</span>
+                    <span>Понравилось ли качество оказанных услуг</span>
                     <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType2" v-model="second"></slider>
                 </div>
             </div>
@@ -38,12 +38,12 @@
                     <div class="number">
                         <span class="number-val">3</span>
                     </div>
-                    <div :class="colorclass3">
+                    <div :style="colorclass3">
                         <span>{{this.text3}}</span>
                     </div>
                 </div>
                 <div class="question-block">
-                    <span>Понравилось ли качество выполненных услуг</span>
+                    <span>Понравилось ли качество оказанных услуг</span>
                         <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType3" v-model="third"></slider>
                 </div>
             </div>
@@ -498,7 +498,7 @@ export default {
                     return 'хотелось бы лучше';
                 case 3:
                     this.color3 = "black"
-                    this.text3 = 'цените работу'
+                    this.text3 = 'Oцените работу'
                     return 'Оцените работу';
                 case 4:
                     this.color3 = "#C5E384"
