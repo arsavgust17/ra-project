@@ -10,46 +10,21 @@ export default new Router({
     {
       path: "/",
       name: "Home",
-      component: () => import(/* webpackChunkName: "home" */ "./views/Home.vue")
+      component: () => import(/* webpackChunkName: "qr" */ "@/components/scanQR.vue"),
+      children: [
+        {
+          path: "/quiz",
+          name: "quiz",
+          component: () =>
+              import(/* webpackChunkName: "quiz" */ "@/components/quiz.vue")
+        },
+      ]
     },
     {
-      path: "/about",
-      name: "about",
+      path: "/statistics",
+      name: "scaning",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    },
-    {
-      path: "/auth",
-      name: "auth",
-      component: () =>
-        import(/* webpackChunkName: "auth" */ "@/components/auth.vue")
-    },
-    {
-      path: "/qr",
-      name: "qr",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "qr" */ "@/components/scanQR.vue")
-    },
-    {
-      path: "/start",
-      name: "start",
-      component: () =>
-          import(/* webpackChunkName: "auth" */ "@/components/start.vue")
-    },
-    {
-      path: "/photoload",
-      name: "photoload",
-      component: () =>
-          import(/* webpackChunkName: "auth" */ "@/components/photoload.vue")
-    },
-    {
-      path: "/quiz",
-      name: "quiz",
-      component: () =>
-          import(/* webpackChunkName: "quiz" */ "@/components/quiz.vue")
+          import(/* webpackChunkName: "scanning" */ "@/components/scaning.vue")
     }
   ]
 });

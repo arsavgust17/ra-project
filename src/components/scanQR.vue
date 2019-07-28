@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <p class="error">{{ error }}</p>
-
-        <p class="decode-result">Last result: <b>{{ result }}</b></p>
-
-        <qrcode-stream @decode="onDecode" @init="onInit" />
+    <div :class="isMobile ? 'main':'mainmob'">
+        <div class="main-container">
+            <div style="display: flex; flex-direction: column; margin-bottom: 150px;">
+                <p class="error">{{ error }}</p>
+                <p class="decode-result">Помогите улучшить качество работы<br> врачей и поликлиник, отправьте<br> QR и ваш отзыв!<br> <b>{{ result }}</b></p>
+                <qrcode-stream @decode="onDecode" @init="onInit" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -25,12 +27,17 @@ export default {
     },
 
     methods: {
+        isMobile() {
+            try {
+                document.createEvent("TouchEvent");
+                return true;
+            } catch (e) {
+                return false;
+            }
+        },
         onDecode (result) {
             this.result = result;
-            axios({
-                url: '',
-                body: '',
-            });
+            location = 'http://localhost:8080/quiz'
         },
 
         async onInit (promise) {
@@ -57,8 +64,77 @@ export default {
 </script>
 
 <style scoped>
-.error {
-    font-weight: bold;
-    color: red;
-}
+    .decode-result {
+        width: 70%;
+        text-align: left;
+        margin: auto;
+        margin-bottom: 10px;
+        line-height: 40px;
+        font-size: 32px;
+    }
+    >>>.overlay {
+        display: flex;
+        justify-content: center;
+    }
+    >>>.inside {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    >>>.camera {
+        max-width: 70%;
+        max-height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    .main
+    {
+        background-image: url("../../public/images/auth.png");
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .main p
+    {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 40px;
+        color: #FFFFFF;
+    }
+    .mainmob {
+        background-color: #467DE4;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .upload
+    {
+        padding: 20px 0;
+        background-color: #467DE4;
+        color: #3399ff;
+    }
+    .upload-container
+    {
+        border: 1px dashed #FFFFFF;
+        margin-right: 314px;
+    }
+    .main-container {
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+    }
 </style>
