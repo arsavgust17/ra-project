@@ -6,30 +6,45 @@
     <div class="block">
         <div class="questions">
             <div class="question">
-                <div class="number">
-                    <span class="number-val">1</span>
+                <div>
+                    <div class="number">
+                        <span class="number-val">1</span>
+                    </div>
+                    <div :style="colorclass1">
+                        <span>{{this.text1}}</span>
+                    </div>
                 </div>
                 <div class="question-block">
                     <span>Понравилось ли качество выполненных услуг</span>
-                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="always" :tip-format="emojiType"></slider>
+                    <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType" v-model="first"></slider>
                 </div>
             </div>
             <div class="question">
-                <div class="number">
-                    <span class="number-val">2</span>
+                <div>
+                    <div class="number">
+                        <span class="number-val">2</span>
+                    </div>
+                    <div :class="colorclass2">
+                        <span>{{this.text2}}</span>
+                    </div>
                 </div>
                 <div class="question-block">
                     <span>Понравилось ли качество выполненных услуг</span>
-                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="always" :tip-format="emojiType"></slider>
+                    <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType2" v-model="second"></slider>
                 </div>
             </div>
             <div class="question">
-                <div class="number">
-                    <span class="number-val">3</span>
+                <div>
+                    <div class="number">
+                        <span class="number-val">3</span>
+                    </div>
+                    <div :class="colorclass3">
+                        <span>{{this.text3}}</span>
+                    </div>
                 </div>
                 <div class="question-block">
                     <span>Понравилось ли качество выполненных услуг</span>
-                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="always" :tip-format="emojiType"></slider>
+                        <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType3" v-model="third"></slider>
                 </div>
             </div>
             <div>
@@ -398,18 +413,100 @@
 <script>
 export default {
     name: "quiz",
+    data() {
+        return {
+            color1: '',
+            color2: '',
+            color3: '',
+            first: 3,
+            second: 3,
+            third: 3,
+            text1: '',
+            text2: '',
+            text3: '',
+        };
+    },
+    computed: {
+        colorclass1() {
+            return `color:${this.color1};`;
+        },
+        colorclass2() {
+            return `color:${this.color2};`;
+        },
+        colorclass3() {
+            return `color:${this.color3};`;
+        },
+    },
     methods: {
         emojiType(val) {
             switch (val) {
                 case 1:
-                    return 'очень плохо';
+                    this.color1 = "#F70A0A";
+                    this.text1 = "всё плохо"
+                    return 'всё плохо';
                 case 2:
+                    this.color1 = "#FFB841"
+                    this.text1 = 'хотелось бы лучше'
                     return 'хотелось бы лучше';
                 case 3:
-                    return null;
+                    this.color1 = "black"
+                    this.text1 = 'Оцените работу'
+                    return 'Оцените работу';
                 case 4:
+                    this.color1 = "#C5E384"
+                    this.text1 = 'вроде неплохо'
                     return 'вроде неплохо';
                 case 5:
+                    this.color1 = '#008000'
+                    this.text1 = 'всё супер'
+                    return 'всё супер';
+            }
+        },
+        emojiType2(val) {
+            switch (val) {
+                case 1:
+                    this.color2 = "#F70A0A";
+                    this.text2 = 'всё плохо'
+                    return 'всё плохо';
+                case 2:
+                    this.color2 = "#FFB841"
+                    this.text2 = 'хотелось бы лучше'
+                    return 'хотелось бы лучше';
+                case 3:
+                    this.color2 = "black"
+                    this.text2 = 'Оцените работу'
+                    return 'Оцените работу';
+                case 4:
+                    this.color2 = "#C5E384"
+                    this.text2 = 'вроде неплохо'
+                    return 'вроде неплохо';
+                case 5:
+                    this.color2 = '#008000'
+                    this.text2 = 'всё супер'
+                    return 'всё супер';
+            }
+        },
+        emojiType3(val) {
+            switch (val) {
+                case 1:
+                    this.color3 = "#F70A0A";
+                    this.text3 = 'всё плохо'
+                    return 'всё плохо';
+                case 2:
+                    this.color3 = "#FFB841"
+                    this.text3 = 'хотелось бы лучше'
+                    return 'хотелось бы лучше';
+                case 3:
+                    this.color3 = "black"
+                    this.text3 = 'цените работу'
+                    return 'Оцените работу';
+                case 4:
+                    this.color3 = "#C5E384"
+                    this.text3 = 'вроде неплохо'
+                    return 'вроде неплохо';
+                case 5:
+                    this.color3 = '#008000'
+                    this.text3 = 'всё супер'
                     return 'всё супер';
             }
         }
@@ -542,7 +639,7 @@ export default {
 }
 >>>.ivu-slider-wrap {
     position: relative;
-    background-color: #467DE4   ;
+    background-color: #467DE4;
 }
 .main {
     background-color: #467DE4;

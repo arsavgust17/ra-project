@@ -1,7 +1,7 @@
 <template>
     <div :class="isMobile ? 'main':'mainmob'">
         <Upload class="upload-container"
-                :on-success="(response, file, fileList)=>this.$router.push('auth') "
+                :on-success="(response, file, fileList)=>this.$router.push('quiz') "
                 action="//jsonplaceholder.typicode.com/posts/">
             <div class="upload">
                 <Icon type="ios-cloud-upload" size="52"></Icon>
