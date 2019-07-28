@@ -24,7 +24,7 @@
                     <div class="number">
                         <span class="number-val">2</span>
                     </div>
-                    <div :class="colorclass2">
+                    <div :style="colorclass2">
                         <span>{{this.text2}}</span>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <div class="number">
                         <span class="number-val">3</span>
                     </div>
-                    <div :class="colorclass3">
+                    <div :style="colorclass3">
                         <span>{{this.text3}}</span>
                     </div>
                 </div>
