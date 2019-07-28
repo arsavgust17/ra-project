@@ -20,6 +20,11 @@ export default new Router({
       path: "/statistics",
       component: () =>
           import(/* webpackChunkName: "statistic" */ "@/components/statistics.vue")
-    }
+    },
+    {
+      path: "/rating",
+      name: "rating",
+      component: () => import(/* webpackChunkName: "rating" */ '@/components/rating/rating.vue'),
+    },
   ]
 });

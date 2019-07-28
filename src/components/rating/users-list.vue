@@ -1,15 +1,15 @@
 <template lang="pug">
 .list
   UsersListBlock(
-  v-for="user in users"
-  :key="user.id"
-  :user="user"
-  :number="user.order"
+  v-for="doc in docs"
+  :key="doc.id"
+  :user="doc"
+  :number="doc.order"
   )
 </template>
 
 <script>
-import UsersListBlock from '@/components/users-list-block.vue';
+import UsersListBlock from '@/components/rating/users-list-block.vue';
 
 export default {
   name: 'users-list',
@@ -21,7 +21,7 @@ export default {
   // то буду класть эти данные во Vuex
   props: {},
   computed: {
-    users() {
+    docs() {
       return this.$utils.clone(this.$store.getters['Rating/getUsers']);
     },
   },

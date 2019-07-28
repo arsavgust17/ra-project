@@ -9,9 +9,9 @@ Loader(v-if='isLoadingData')
 </template>
 
 <script>
-import UsersList from '@/components/users-list.vue';
-import Search from '@/components/search-component.vue';
-import Loader from '@/components/loader.vue';
+import UsersList from '@/components/rating/users-list.vue';
+import Search from '@/components/rating/search-component.vue';
+import Loader from '@/components/rating/loader.vue';
 
 export default {
   name: 'rating.vue',

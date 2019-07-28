@@ -109,7 +109,7 @@ export default {
   align-items center
   font-size 2em
   color var(--portal-white)
-  background-color var(--portal-green)
+  background-color #638ED0
 
 .user
   display flex
