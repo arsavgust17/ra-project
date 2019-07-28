@@ -3,7 +3,7 @@
         <div class="main-container">
             <div style="display: flex; flex-direction: column; margin-bottom: 150px;">
                 <p class="error">{{ error }}</p>
-                <p class="decode-result">Помогите улучшить качество работы<br> врачей и поликлиник, отправьте<br> QR и ваш отзыв!<br> <b>{{ result }}</b></p>
+                <p class="decode-result">Отсканиируйте ваш QR-code!<br> <b>{{ result }}</b></p>
                 <qrcode-stream @decode="onDecode" @init="onInit" />
             </div>
         </div>
@@ -37,7 +37,7 @@ export default {
         },
         onDecode (result) {
             this.result = result;
-            location = 'http://localhost:8080/quiz'
+            location = '/quiz';
         },
 
         async onInit (promise) {

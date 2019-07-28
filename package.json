@@ -13,6 +13,7 @@
     "iview": "^3.4.2",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
+    "pug": "^2.0.4",
     "qrcode": "^1.4.1",
     "vue": "^2.6.10",
     "vue-qrcode-reader": "^2.0.2",

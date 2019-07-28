@@ -4,47 +4,47 @@
         <img src="../../public/images/Frame.png" alt="">
     </div>
     <div class="block">
-        <div class="questions">
+        <div class="questions" style="float: right">
             <div class="question">
                 <div>
-                    <div class="number">
+                    <div class="number" :style="colorclass1">
                         <span class="number-val">1</span>
                     </div>
-                    <div :style="colorclass1">
-                        <span class="span-text">{{this.text1}}</span>
+                    <div>
+                        <span>{{this.text1}}</span>
                     </div>
                 </div>
                 <div class="question-block">
-                    <span style="margin-right: 10px;">Понравилось ли качество оказанных услуг</span>
-                    <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType" v-model="first"></slider>
+                    <span style="margin-right: 10px;">Оцените посещение поликлиники: </span>
+                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType" v-model="first"></slider>
                 </div>
             </div>
             <div class="question">
                 <div>
-                    <div class="number">
+                    <div class="number" :style="colorclass2">
                         <span class="number-val">2</span>
                     </div>
-                    <div :style="colorclass2">
-                        <span class="span-text">{{this.text2}}</span>
+                    <div>
+                        <span>{{this.text2}}</span>
                     </div>
                 </div>
                 <div class="question-block">
-                    <span>Понравилось ли качество оказанных услуг</span>
-                    <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType2" v-model="second"></slider>
+                    <span>Оцените прием врача: </span>
+                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType2" v-model="second"></slider>
                 </div>
             </div>
             <div class="question">
                 <div>
-                    <div class="number">
+                    <div class="number" :style="colorclass3">
                         <span class="number-val">3</span>
                     </div>
-                    <div :style="colorclass3">
-                        <span class="span-text">{{this.text3}}</span>
+                    <div>
+                        <span>{{this.text3}}</span>
                     </div>
                 </div>
                 <div class="question-block">
-                    <span>Понравилось ли качество оказанных услуг</span>
-                        <slider @on-input="colorInput(value)" width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType3" v-model="third"></slider>
+                    <span>Вас устараивает назначченное лечение: </span>
+                        <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType3" v-model="third"></slider>
                 </div>
             </div>
             <div>
@@ -421,9 +421,9 @@ export default {
             first: 3,
             second: 3,
             third: 3,
-            text1: 'Оцените работу',
-            text2: 'Оцените работу',
-            text3: 'Оцените работу',
+            text1: '',
+            text2: '',
+            text3: '',
         };
     },
     computed: {
@@ -541,7 +541,7 @@ export default {
         border: 2px solid black;
         font-size: 36px !important;
         font-weight: bold;
-        padding: 20px 40px;
+        padding: 10px 35px;
         border-radius: 50%;
         margin-right: 25px;
     }
@@ -662,9 +662,5 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-.span-text
-{
-    margin-right: 25px;
 }
 </style>
