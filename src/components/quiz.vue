@@ -10,10 +10,8 @@
                     <div class="number" :style="colorclass1">
                         <span class="number-val">1</span>
                     </div>
-                    <div>
-                        <span>{{this.text1}}</span>
-                    </div>
                 </div>
+                <span class="span-text"><nobr>{{this.text1}}</nobr></span>
                 <div class="question-block">
                     <span style="margin-right: 10px;">Оцените посещение поликлиники: </span>
                     <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType" v-model="first"></slider>
@@ -24,10 +22,8 @@
                     <div class="number" :style="colorclass2">
                         <span class="number-val">2</span>
                     </div>
-                    <div>
-                        <span>{{this.text2}}</span>
-                    </div>
                 </div>
+                <span class="span-text"><nobr>{{this.text2}}</nobr></span>
                 <div class="question-block">
                     <span>Оцените прием врача: </span>
                     <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType2" v-model="second"></slider>
@@ -38,10 +34,8 @@
                     <div class="number" :style="colorclass3">
                         <span class="number-val">3</span>
                     </div>
-                    <div>
-                        <span>{{this.text3}}</span>
-                    </div>
                 </div>
+                <span class="span-text"><nobr>{{this.text3}}</nobr></span>
                 <div class="question-block">
                     <span>Вас устараивает назначченное лечение: </span>
                         <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType3" v-model="third"></slider>
@@ -421,9 +415,9 @@ export default {
             first: 3,
             second: 3,
             third: 3,
-            text1: '',
-            text2: '',
-            text3: '',
+            text1: 'Оцените работу',
+            text2: 'Оцените работу',
+            text3: 'Оцените работу',
         };
     },
     computed: {
@@ -663,4 +657,10 @@ export default {
     align-items: center;
     justify-content: flex-end;
 }
+    .span-text
+    {
+        position: absolute;
+        margin-top: 80px;
+        margin-right: 150px;
+    }
 </style>
