@@ -1,46 +1,14 @@
 <template>
 <div class="content">
     <div class="header">
-        <img src="../../public/images/Frame.png" alt="">
+        <img src="/../public/images/Frame.png" alt="">
     </div>
     <div class="block">
         <div class="questions" style="float: right">
-            <div class="question">
-                <div>
-                    <div class="number" :style="colorclass1">
-                        <span class="number-val">1</span>
-                    </div>
-                </div>
-                <span class="span-text"><nobr>{{this.text1}}</nobr></span>
-                <div class="question-block">
-                    <span style="margin-right: 10px;">Оцените посещение поликлиники: </span>
-                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType" v-model="first"></slider>
-                </div>
-            </div>
-            <div class="question">
-                <div>
-                    <div class="number" :style="colorclass2">
-                        <span class="number-val">2</span>
-                    </div>
-                </div>
-                <span class="span-text"><nobr>{{this.text2}}</nobr></span>
-                <div class="question-block">
-                    <span>Оцените прием врача: </span>
-                    <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType2" v-model="second"></slider>
-                </div>
-            </div>
-            <div class="question">
-                <div>
-                    <div class="number" :style="colorclass3">
-                        <span class="number-val">3</span>
-                    </div>
-                </div>
-                <span class="span-text"><nobr>{{this.text3}}</nobr></span>
-                <div class="question-block">
-                    <span>Вас устараивает назначченное лечение: </span>
-                        <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType3" v-model="third"></slider>
-                </div>
-            </div>
+
+            <template v-for="(question, i) in questions" >
+                <Question :question-text="question" :number="i + 1"></Question>
+            </template>
             <div>
                 <Button class="submitButton" @click="$router.push('/rate-docs')">Оставить отзыв</Button>
             </div>
@@ -395,8 +363,8 @@
                     </div>
                 </dib>
                 <div class="comments">
-                    <Input v-if="true" v-model="value5" type="textarea"  width="100%" placeholder="Развернутая оценка врача..." rows="19"/>
-                    <Input v-else v-model="value5" type="textarea" width="100%" placeholder="Развернутая оценка поликлиники..." rows="19    "/>
+                    <Input v-if="true" type="textarea"  width="100%" placeholder="Развернутая оценка врача..." rows="19"/>
+                    <Input v-else type="textarea" width="100%" placeholder="Развернутая оценка поликлиники..." rows="19"/>
                 </div>
             </div>
         </div>
@@ -405,31 +373,21 @@
 </template>
 
 <script>
+import Question from '@/components/quiz/quiz-components/question.vue';
+
 export default {
     name: "quiz",
+    components: {
+        Question,
+    },
     data() {
         return {
-            color1: '',
-            color2: '',
-            color3: '',
-            first: 3,
-            second: 3,
-            third: 3,
-            text1: 'Оцените работу',
-            text2: 'Оцените работу',
-            text3: 'Оцените работу',
+            questions: [
+                'Оцените посещение поликлиники: ',
+                'Оцените прием врача: ',
+                'Вас устараивает назначченное лечение: ',
+            ]
         };
-    },
-    computed: {
-        colorclass1() {
-            return `color:${this.color1};`;
-        },
-        colorclass2() {
-            return `color:${this.color2};`;
-        },
-        colorclass3() {
-            return `color:${this.color3};`;
-        },
     },
     methods: {
         emojiType(val) {
@@ -456,54 +414,6 @@ export default {
                     return 'всё супер';
             }
         },
-        emojiType2(val) {
-            switch (val) {
-                case 1:
-                    this.color2 = "#F70A0A";
-                    this.text2 = 'всё плохо'
-                    return 'всё плохо';
-                case 2:
-                    this.color2 = "#FFB841"
-                    this.text2 = 'хотелось бы лучше'
-                    return 'хотелось бы лучше';
-                case 3:
-                    this.color2 = "black"
-                    this.text2 = 'Оцените работу'
-                    return 'Оцените работу';
-                case 4:
-                    this.color2 = "#C5E384"
-                    this.text2 = 'вроде неплохо'
-                    return 'вроде неплохо';
-                case 5:
-                    this.color2 = '#008000'
-                    this.text2 = 'всё супер'
-                    return 'всё супер';
-            }
-        },
-        emojiType3(val) {
-            switch (val) {
-                case 1:
-                    this.color3 = "#F70A0A";
-                    this.text3 = 'всё плохо'
-                    return 'всё плохо';
-                case 2:
-                    this.color3 = "#FFB841"
-                    this.text3 = 'хотелось бы лучше'
-                    return 'хотелось бы лучше';
-                case 3:
-                    this.color3 = "black"
-                    this.text3 = 'Oцените работу'
-                    return 'Оцените работу';
-                case 4:
-                    this.color3 = "#C5E384"
-                    this.text3 = 'вроде неплохо'
-                    return 'вроде неплохо';
-                case 5:
-                    this.color3 = '#008000'
-                    this.text3 = 'всё супер'
-                    return 'всё супер';
-            }
-        }
     }
 };
 </script>
@@ -525,19 +435,6 @@ export default {
     .img-class {
         width: 100%;
         height: 100%;
-    }
-    .number-val {
-    }
-    .number {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid black;
-        font-size: 36px !important;
-        font-weight: bold;
-        padding: 10px 35px;
-        border-radius: 50%;
-        margin-right: 25px;
     }
     >>>.ivu-btn{
         background: #FFFFFF;
@@ -593,12 +490,6 @@ export default {
         font-size: 20px;
         width: 400px;
     }
-    .question-block {
-        width: 400px;
-    }
-    .question {
-        display: flex;
-    }
     .content {
         display: flex;
         flex-direction: column;
@@ -622,19 +513,6 @@ export default {
         box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
     }
->>>.ivu-slider-button-wrap {
-    top: -9px;
-}
->>>.ivu-slider-button {
-    width: 24px;
-    height: 24px;
-    border: 2px solid #888CB8;
-    background-color: #888CB8;
-}
->>>.ivu-slider-wrap {
-    position: relative;
-    background-color: #467DE4;
-}
 .main {
     background-color: #467DE4;
     position: fixed;
@@ -646,21 +524,4 @@ export default {
     align-items: center;
     justify-content: flex-end;
 }
-.mainmob {
-    background-color: #467DE4;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-    .span-text
-    {
-        position: absolute;
-        margin-top: 80px;
-        margin-right: 150px;
-    }
 </style>

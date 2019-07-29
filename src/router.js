@@ -14,7 +14,7 @@ export default new Router({
     {
       path: "/quiz",
       component: () =>
-          import(/* webpackChunkName: "quiz" */ "@/components/quiz.vue")
+          import(/* webpackChunkName: "quiz" */ "@/components/quiz/quiz.vue")
     },
     {
       path: "/statistics",
