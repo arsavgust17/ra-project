@@ -419,100 +419,100 @@ export default {
 </script>
 
 <style scoped>
-    >>>.submitButton.ivu-btn {
-        color: #fff;
-        background: #467DE4;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-    }
-    >>>textarea.ivu-input {
-        font-size: 20px;
-    }
+>>>.submitButton.ivu-btn {
+    color: #fff;
+    background: #467DE4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+>>>textarea.ivu-input {
+    font-size: 20px;
+}
 
-    .bg-container {
+.bg-container {
 
-    }
-    .img-class {
-        width: 100%;
-        height: 100%;
-    }
-    >>>.ivu-btn{
-        background: #FFFFFF;
-        font-size: 24px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        padding:12px 40px;
-        margin-right: 20px;
-    }
-    .buttons {
-        margin-bottom: 100px;
-        justify-content: space-between;
-        display: flex;
-    }
-    .buttons-block {
-        display: flex;
-        justify-content: flex-start;
-        width: 70%;
-        height: 50px;
-        flex-direction: column;
-        display: flex;
-    }
-    .comments {
-        display: flex;
-        width: 400px;
-    }
-    .feed-head {
-        font-weight: bold;
-        font-size: 42px;
-        display: flex;
-        height: 80px;
-    }
-    .feed-back {
-        display: flex;
-        flex-direction: column;
-        width: 920px;
-    }
-    .feed-form {
-        display: flex;
-        height: 650px;
-        justify-content: space-between;
-        padding: 40px;
-        background: #467DE4;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-    }
-    .questions {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 20px 150px 80px 0;
-        height: 710px;
-        font-size: 20px;
-        width: 400px;
-    }
-    .content {
-        display: flex;
-        flex-direction: column;
-        background: #467DE4;
-        padding: 50px;
-    }
-    .header{
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: 0;
-            padding: 5px 0 5px 150px;
-        width: 100%;
-        background-color: #FFF9F9;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    .block{
-        display: flex;
-        padding: 40px 155px 155px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-    }
+}
+.img-class {
+    width: 100%;
+    height: 100%;
+}
+>>>.ivu-btn{
+    background: #FFFFFF;
+    font-size: 24px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding:12px 40px;
+    margin-right: 20px;
+}
+.buttons {
+    margin-bottom: 100px;
+    justify-content: space-between;
+    display: flex;
+}
+.buttons-block {
+    display: flex;
+    justify-content: flex-start;
+    width: 70%;
+    height: 50px;
+    flex-direction: column;
+    display: flex;
+}
+.comments {
+    display: flex;
+    width: 400px;
+}
+.feed-head {
+    font-weight: bold;
+    font-size: 42px;
+    display: flex;
+    height: 80px;
+}
+.feed-back {
+    display: flex;
+    flex-direction: column;
+    width: 920px;
+}
+.feed-form {
+    display: flex;
+    height: 650px;
+    justify-content: space-between;
+    padding: 40px;
+    background: #467DE4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 150px 80px 0;
+    height: 710px;
+    font-size: 20px;
+    width: 400px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    background: #467DE4;
+    padding: 50px;
+}
+.header{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+        padding: 5px 0 5px 150px;
+    width: 100%;
+    background-color: #FFF9F9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.block{
+    display: flex;
+    padding: 40px 155px 155px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
 .main {
     background-color: #467DE4;
     position: fixed;
@@ -523,5 +523,42 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+@media(max-width: 1400px) {
+    .content {
+        background-color: #467DE4;
+    }
+    .bg-container {
+        visibility: hidden;
+    }
+    .feed-head {
+        margin-right: 7%;
+        margin-left: 7%;
+        height: auto;
+    }
+    .feed-form {
+        margin-right: 5%;
+        margin-left: 5%;
+        flex-direction: column;
+    }
+    .comments {
+        max-height: 400px;
+        overflow: hidden;
+    }
+    .block {
+        flex-direction: column;
+    }
+    .feed-back {
+        width: auto;
+        max-width: 700px;
+    }
+    .questions {
+        margin: auto;
+    }
+    .block {
+        align-items: center;
+        align-self: center;
+        padding: 10% 0;
+    }
 }
 </style>
