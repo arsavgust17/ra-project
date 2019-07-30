@@ -529,7 +529,7 @@ export default {
         background-color: #467DE4;
     }
     .bg-container {
-        visibility: hidden;
+        display: none;
     }
     .feed-head {
         margin-right: 7%;
