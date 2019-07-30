@@ -19,6 +19,7 @@
     "vue": "^2.6.10",
     "vue-qrcode-reader": "^2.0.2",
     "vue-router": "^3.0.3",
+    "vuetify": "^2.0.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

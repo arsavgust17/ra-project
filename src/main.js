@@ -5,6 +5,8 @@ import store from "@/store/store";
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import axios from 'axios';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 
 import iViewUI from '@/global/iViewUI';
 import vueGlobalServices from '@/global/vueGlobalServices';
@@ -17,6 +19,7 @@ vueGlobalServices(Vue);
 
 Vue.config.productionTip = false;
 Vue.use(iView);
+Vue.use(Vuetify);
 Vue.use(axios);
 
 new Vue({
