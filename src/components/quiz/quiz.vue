@@ -1,8 +1,5 @@
 <template>
 <div class="content">
-    <div class="header">
-        <img src="/../public/images/Frame.png" alt="">
-    </div>
     <div class="block">
         <div class="questions" style="float: right">
 
@@ -23,8 +20,8 @@
                     </div>
                 </div>
                 <div class="comments">
-                    <Input v-if="true" type="textarea"  width="100%" placeholder="Развернутая оценка врача..." :rows="19"/>
-                    <Input v-else type="textarea" width="100%" placeholder="Развернутая оценка поликлиники..." :rows="19"/>
+                    <Input v-if="true" type="textarea"  width="100%" placeholder="Развернутая оценка врача..." :rows="15"/>
+                    <Input v-else type="textarea" width="100%" placeholder="Развернутая оценка поликлиники..." :rows="15"/>
                 </div>
             </div>
         </div>
@@ -136,6 +133,7 @@ export default {
 }
 .feed-form {
     display: flex;
+    flex-direction: column;
     height: 650px;
     justify-content: space-between;
     padding: 40px;
@@ -218,6 +216,47 @@ export default {
         align-items: center;
         align-self: center;
         padding: 10% 0;
+    }
+}
+@media(max-width: 650px) {
+    .content {
+        padding: 0;
+    }
+    .block {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    >>>.question-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    >>>.question-block span{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    >>>.question {
+        display: flex;
+        justify-content: center;
+    }
+    >>>.questions {
+        margin: 0;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    >>>i .v-icon {
+        font-size: 32px;
+    }
+    >>>.span-text {
+        display: none;
+    }
+    >>>.number {
+        display: none;
     }
 }
 @media(min-width: 1550px) {

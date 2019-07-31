@@ -17,7 +17,6 @@
                 :half-increments="halfIncrements"
                 :hover="hover"
                 :readonly="readonly"
-                :size="size"
                 :dense="dense"
                 :color="color"
                 :background-color="bgColor"
@@ -51,7 +50,6 @@
                 length: 5,
                 rating: 2,
                 readonly: false,
-                size: 64,
                 dense: false,
                 color: '#FFB5B5',
                 colors: [
