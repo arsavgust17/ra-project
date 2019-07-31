@@ -16,15 +16,15 @@
         <div class="feed-back">
             <div class="feed-head">ваше мнение очень важно для нас</div>
             <div class="feed-form">
-                <dib class="buttons-block">
+                <div class="buttons-block">
                     <div class="buttons">
                         <Button>О враче</Button>
                         <Button>О клинике</Button>
                     </div>
-                </dib>
+                </div>
                 <div class="comments">
-                    <Input v-if="true" type="textarea"  width="100%" placeholder="Развернутая оценка врача..." rows="19"/>
-                    <Input v-else type="textarea" width="100%" placeholder="Развернутая оценка поликлиники..." rows="19"/>
+                    <Input v-if="true" type="textarea"  width="100%" placeholder="Развернутая оценка врача..." :rows="19"/>
+                    <Input v-else type="textarea" width="100%" placeholder="Развернутая оценка поликлиники..." :rows="19"/>
                 </div>
             </div>
         </div>
@@ -46,6 +46,8 @@ export default {
                 'Оцените посещение поликлиники: ',
                 'Оцените прием врача: ',
                 'Вас устараивает назначченное лечение: ',
+                'Вас приняли вовремя: ',
+                'Чистота в поликлинике и кабинете: ',
             ]
         };
     },
@@ -168,7 +170,7 @@ export default {
 }
 .block{
     display: flex;
-    padding: 40px 155px 155px;
+    padding: 40px 50px 155px;
     background: #FFFFFF;
     box-shadow: 0px 4px 100px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -211,9 +213,6 @@ export default {
     .feed-back {
         width: auto;
         max-width: 700px;
-    }
-    .questions {
-        margin: auto;
     }
     .block {
         align-items: center;

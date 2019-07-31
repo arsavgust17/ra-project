@@ -1,14 +1,28 @@
 <template>
 <div class="question">
     <div>
-        <div class="number" :style="colorClass">
-            <span class="number-val">{{number}}</span>
+        <div class="number">
+            <span class="number-val">{{rating}}</span>
         </div>
     </div>
     <span class="span-text"><nobr>{{text}}</nobr></span>
     <div class="question-block">
         <span style="margin-right: 10px;">{{questionText}}</span>
-        <slider width="50%" :step="1" :max="5" :min="1" show-tip="never" @on-change="emojiType"></slider>
+        <v-rating
+                v-model="rating"
+                :length="length"
+                :empty-icon="emptyIcon"
+                :full-icon="fullIcon"
+                :half-icon="halfIcon"
+                :half-increments="halfIncrements"
+                :hover="hover"
+                :readonly="readonly"
+                :size="size"
+                :dense="dense"
+                :color="color"
+                :background-color="bgColor"
+        ></v-rating>
+
     </div>
 </div>
 </template>
@@ -29,7 +43,38 @@
         data () {
             return {
                 text: '',
-                color: '',
+                emptyIcon: 'mdi-heart-outline',
+                    fullIcon: 'mdi-heart',
+                halfIcon: 'mdi-heart-half-full',
+                halfIncrements: true,
+                hover: true,
+                length: 5,
+                rating: 2,
+                readonly: false,
+                size: 64,
+                dense: false,
+                color: '#FFB5B5',
+                colors: [
+                'primary',
+                'warning',
+                'green',
+                'red',
+                'blue',
+                'error',
+                'teal',
+                'red lighten-3',
+            ],
+                bgColor: 'grey lighten-1',
+                bgColors: [
+                'grey lighten-2',
+                'warning lighten-1',
+                'green lighten-2',
+                'red lighten-2',
+                'grey',
+                '#eee',
+                'cyan lighten-2',
+                'grey lighten-1',
+            ],
             };
         },
         computed: {
@@ -41,23 +86,18 @@
             emojiType(val) {
                 switch (val) {
                     case 1:
-                        this.color = "#F70A0A";
                         this.text = "всё плохо";
                         return 'всё плохо';
                     case 2:
-                        this.color = "#FFB841";
                         this.text = 'хотелось бы лучше';
                         return 'хотелось бы лучше';
                     case 3:
-                        this.color = "black";
                         this.text = 'Оцените работу';
                         return 'Оцените работу';
                     case 4:
-                        this.color = "#C5E384";
                         this.text = 'вроде неплохо';
                         return 'вроде неплохо';
                     case 5:
-                        this.color = '#008000';
                         this.text = 'всё супер';
                         return 'всё супер';
                 }

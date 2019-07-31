@@ -5,11 +5,11 @@ import store from "@/store/store";
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import axios from 'axios';
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
 
+import Vuetify from '@/global/vuetify';
 import iViewUI from '@/global/iViewUI';
 import vueGlobalServices from '@/global/vueGlobalServices';
+import '@mdi/font/css/materialdesignicons.css'
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
