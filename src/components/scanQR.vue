@@ -39,7 +39,7 @@ export default {
         },
         onDecode (result) {
             this.result = result;
-            location = '/quiz';
+            this.$router.push('/quiz');
         },
 
         async onInit (promise) {
