@@ -27,7 +27,18 @@ export default {
             error: ''
         }
     },
-
+    mounted() {
+        gtag('event', 'CustomDimensions', {
+            event_category: 'Dimensions',
+            event_label: 'Специальные :: Переменные',
+            newDimension2: '33333',
+            newDimension3: 'ffff',
+            newDimension4: 'g4g54gg4g',
+            newDimension5: 'OOOOOOO',
+            newDimension6: 'BBBBTT',
+            newDimension7: 'ИИИИИЕЕЕЕ-ОООО-ИИИ-ЯЯЯ-ООО',
+        });
+    },
     methods: {
         isMobile() {
             try {
