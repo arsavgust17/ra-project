@@ -28,7 +28,7 @@ export default {
         }
     },
     mounted() {
-        ga('send', 'newDimension', {
+        ga('send', 'event', {
             hitType: 'event',
             eventCategory: 'Videos',
             eventAction: 'play',
