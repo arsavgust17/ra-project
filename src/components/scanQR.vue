@@ -28,15 +28,17 @@ export default {
         }
     },
     mounted() {
-        gtag('event', 'CustomDimensions', {
-            event_category: 'Dimensions',
-            event_label: 'Специальные :: Переменные',
-            newDimension2: '33333',
-            newDimension3: 'ffff',
-            newDimension4: 'g4g54gg4g',
-            newDimension5: 'OOOOOOO',
-            newDimension6: 'BBBBTT',
-            newDimension7: 'ИИИИИЕЕЕЕ-ОООО-ИИИ-ЯЯЯ-ООО',
+        ga('send', 'newDimension', {
+            hitType: 'event',
+            eventCategory: 'Videos',
+            eventAction: 'play',
+            eventLabel: 'Fall Campaign',
+            dimension1: '33333',
+            dimension2: 'ffff',
+            dimension3: 'g4g54gg4g',
+            dimension4: 'OOOOOOO',
+            dimension5: 'BBBBTT',
+            dimension6: 'ИИИИИЕЕЕЕ-ОООО-ИИИ-ЯЯЯ-ООО',
         });
     },
     methods: {
