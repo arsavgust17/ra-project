@@ -28,17 +28,25 @@ export default {
         }
     },
     mounted() {
-        ga('send', 'event', {
+        console.log('mounted.log');
+        ga('send', {
             hitType: 'event',
             eventCategory: 'Videos',
             eventAction: 'play',
-            eventLabel: 'Fall Campaign',
-            dimension1: '33333',
-            dimension2: 'ffff',
-            dimension3: 'g4g54gg4g',
-            dimension4: 'OOOOOOO',
-            dimension5: 'BBBBTT',
-            dimension6: 'ИИИИИЕЕЕЕ-ОООО-ИИИ-ЯЯЯ-ООО',
+            eventLabel: 'FallCampaignLabel',
+            eventValue: 'FallCampaignValue',
+            'dimension1': '33333',
+            'dimension2': 'ffff',
+            'dimension3': 'g4g54gg4g',
+            'dimension4': 'OOOOOOO',
+            'dimension5': 'BBBBTT',
+            'dimension6': 'ИИИИИЕЕЕЕ-ОООО-ИИИ-ЯЯЯ-ООО',
+            'metric1': 1,
+            'metric2': 2,
+            'metric3': 3,
+            'metric4': 4,
+            'metric5': 5,
+            'metric6': 6,
         });
     },
     methods: {
